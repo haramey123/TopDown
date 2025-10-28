@@ -5,19 +5,19 @@ public class Player : MonoBehaviour
     Animator animator;
     Rigidbody2D _rigidbody;
 
-    public float flapForce = 6f;
-    public float forwardSpeed = 3f;
-    float deathCooldown = 0f;
+    private float flapForce = 6f;
+    private float forwardSpeed = 3f;
+    private float deathCooldown = 0f;
 
-    bool isFlap = false;
+    private bool isFlap = false;
 
-    public bool godMode = false;
+    private bool godMode = false;
 
-    GameManager gameManager;
+    FPGameManager gameManager;
 
     void Start()
     {
-        gameManager = GameManager.Instance;
+        gameManager = FPGameManager.Instance;
         animator = GetComponentInChildren<Animator>(); // 자식 오브젝트에서 Animator 컴포넌트 가져오기
         _rigidbody = GetComponent<Rigidbody2D>();
     }

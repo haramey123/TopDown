@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class BgLooper : MonoBehaviour
 {
-    public int obstacleCount = 0;
-    public Vector3 obstacleLastPosition = Vector3.zero;
-    public int numBgCount = 5;
+    private int obstacleCount = 0;
+    private Vector3 obstacleLastPosition = Vector3.zero;
+    private int numBgCount = 5;
 
     void Start()
     {

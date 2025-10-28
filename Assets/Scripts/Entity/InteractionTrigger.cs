@@ -8,11 +8,18 @@ public class InteractionTrigger : MonoBehaviour
 
     public string miniGameSceneName = "FlappyPlaneScene";
 
+    UIManager uiManager;
+    void Start()
+    {
+        uiManager = UIManager.Instance;
+    }
+
     private void Update()
     {
         if (interactionPopup.activeSelf)
         {
-            interactionPopup.transform.position =  new Vector3(target.position.x, target.position.y + 1.5f, target.position.z);
+            interactionPopup.transform.position =  new Vector3(target.position.x, target.position.y + 1.5f, target.position.z); // 스페이스바 위치
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 EnterMiniGame();
@@ -31,6 +38,7 @@ public class InteractionTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactionPopup.SetActive(true); // 플레이어가 접근하면 팝업 표시
+            uiManager.EnableHighscore(PlayerPrefs.GetInt("Highscore", 0));
         }
     }
 
@@ -39,6 +47,7 @@ public class InteractionTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactionPopup.SetActive(false); // 플레이어가 벗어나면 팝업 숨김
+            uiManager.DisableHighscore();
         }
     }
 }
