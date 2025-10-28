@@ -18,17 +18,20 @@ public class PlayerController : BaseController
         float vertial = Input.GetAxisRaw("Vertical");
         movementDirection = new Vector2(horizontal, vertial).normalized;
 
-        Vector2 mousePosition = Input.mousePosition;
-        Vector2 worldPos = camera.ScreenToWorldPoint(mousePosition);
-        lookDirection = (worldPos - (Vector2)transform.position);
+        //Vector2 mousePosition = Input.mousePosition;
+        //Vector2 worldPos = camera.ScreenToWorldPoint(mousePosition);
+        //lookDirection = (worldPos - (Vector2)transform.position);
 
-        if (lookDirection.magnitude < .9f)
-        {
-            lookDirection = Vector2.zero;
-        }
-        else
-        {
-            lookDirection = lookDirection.normalized;
-        }
+        if (movementDirection != Vector2.zero)
+            lookDirection = movementDirection;
+
+        //if (lookDirection.magnitude < .9f)
+        //{
+        //    lookDirection = Vector2.zero;
+        //}
+        //else
+        //{
+        //    lookDirection = lookDirection.normalized;
+        //}
     }
 }
