@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public float highPosY = 1f;
-    public float lowPosY = -1f;
+    private float highPosY = 1.5f;
+    private float lowPosY = -1.5f;
 
-    public float holeSizeMin = 1f;
-    public float holeSizeMax = 1.5f;
+    private float holeSizeMin = 1f;
+    private float holeSizeMax = 2f;
 
     public Transform topObject;
     public Transform bottomObject;
 
-    public float widthPadding = 4f;
+    private float widthPadding = 4f;
 
     GameManager gameManager;
 

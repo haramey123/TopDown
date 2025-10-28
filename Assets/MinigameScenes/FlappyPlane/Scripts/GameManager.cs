@@ -9,9 +9,8 @@ public class GameManager : MonoBehaviour
     private int currentScore = 0;
     public bool isDead;
 
-
     UIManager uiManager;
-    public UIManager UiManager { get { return uiManager; } }
+    public UIManager UIManager { get { return uiManager; } }
 
     private void Awake()
     {
@@ -21,12 +20,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        UiManager.UpdateScore(0);
+        UIManager.UpdateScore(0);
     }
 
     public void GameOver()
     {
-        UiManager.SetRestart();
+        UIManager.SetRestart();
     }
 
     public void RestartGame()
@@ -43,6 +42,6 @@ public class GameManager : MonoBehaviour
     {
         currentScore += score;
         Debug.Log(currentScore);
-        UiManager.UpdateScore(currentScore);
+        UIManager.UpdateScore(currentScore);
     }
 }
