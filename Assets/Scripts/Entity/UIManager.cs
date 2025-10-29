@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
         {
             Debug.LogError("Highscore Text is not assigned in the inspector.");
         }
+        DisableHighscore();
     }
 
     public void EnableHighscore(int score)
